@@ -1,7 +1,9 @@
 # Docker NS1 Dynamic DNS
 This updates DNS records in NS1 with the current IP every 5 minutes. The script runs under `cron` inside a lightweight Alpine-based Docker container.
 
-[NS1](https://ns1.com) is a DNS provider that offers a generous free plan (500k queries/month, 50 records) and an API.
+~[NS1](https://ns1.com) is a DNS provider that offers a generous free plan (500k queries/month, 50 records) and an API.~
+
+IBM has since purchased NS1 and it appears that the free plan is now only a free trial.
 
 ### IP Sources
 In external mode, one of three sources will be picked randomly:
