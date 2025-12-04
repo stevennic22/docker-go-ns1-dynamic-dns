@@ -1,0 +1,21 @@
+services:
+  ddns:
+    container_name: ns1-dynamic-dns
+    image: stevennic22/ns1-dynamic-dns:latest
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args: [
+        "FREQUENCY=5"
+      ]
+    working_dir: /app
+    volumes:
+    - ./config/config.yml:/app/config/config.yml:ro
+    environment:
+      TZ: America/New_York
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"

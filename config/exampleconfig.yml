@@ -1,0 +1,36 @@
+example.com:
+  test: False
+  debug: False
+  delay: 1
+  timeout: 30
+  ns1:
+    api-key: "YOUR_NS1_API_KEY"
+  hosts:
+    - name: "host_name"
+      method: LinodeAPI
+      API_KEY: "YOUR_LINODE_API_KEY"
+      HOST_KEY: "YOUR_HOST_KEY"
+      subdomains: 
+       - "@"
+       - "www"
+    - name: "host_name2"
+      method: external
+      subdomains: 
+       - "subdomain"
+  allowed_countries:
+  - US
+  - 'NO'
+
+example.net:
+  test: True
+  api-key: YOUR_LINODE_API_KEY
+  hosts:
+    - name: "host_name2"
+      method: LinodeAPI
+      API_KEY: "YOUR_LINODE_API_KEY"
+      HOST_KEY: "YOUR_HOST_KEY"
+      subdomains: 
+       - "subdomain"
+  allowed_countries:
+  - US
+  - 'NO'
