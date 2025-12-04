@@ -1,8 +1,6 @@
 # Docker NS1 Dynamic DNS
 This updates DNS records in NS1 with the current IP every 5 minutes. The script runs under `cron` inside a lightweight Alpine-based Docker container.
 
-Based off of https://github.com/stevennic22/docker-ns1-dynamic-dns, which was forked to add Linode host management.
-
 [NS1](https://ns1.com) is a DNS provider that offers a generous free plan (500k queries/month, 50 records) and an API.
 
 ### IP Sources
@@ -58,3 +56,7 @@ docker run --rm -v /your/config.yml:/app/config/config.yml:ro stevennic22/ns1-dy
 
 ## Config file
 A `config.yml` file **must** be passed or the container won't be able to do anything. The format for the config file can be seen in `example-config.yml`.
+
+
+## Why
+Based off of https://github.com/stevennic22/docker-ns1-dynamic-dns, which was originally forked to add Linode host management. After running into some issues with updating the previous version, opted for a Golang approach to hopefully make future updates easier.
